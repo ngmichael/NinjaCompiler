@@ -48,7 +48,7 @@ case class IntegerToken(value: Int) extends LiteralToken
 case class CharacterToken(value: Char) extends LiteralToken
 
 // Miscellaneous Tokens
-case class IdentifierTokens(identifier: String) extends Token
+case class IdentifierToken(identifier: String) extends Token
 case class AssignmentToken() extends Token
 case class SeparatorToken() extends Token
 case class TerminatorToken() extends Token
@@ -56,6 +56,7 @@ case class BodyOpenToken() extends Token
 case class BodyCloseToken() extends Token
 case class LeftParenToken() extends Token  // Left Parentheses
 case class RightParenToken() extends Token // Right Parentheses
+case class AccessToken() extends Token // .  p.x = ...
 
 case class EOLToken() extends Token
-case class SyntaxErrorToken() extends Token
+case class SyntaxErrorToken(pos: Int) extends Token
